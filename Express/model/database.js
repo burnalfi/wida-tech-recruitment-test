@@ -83,12 +83,12 @@ Product.init(
                 min: 1
             }
         },
-        quantitySold: {
+        costOfGoodsSold: {
             allowNull: false,
             type: DataTypes.INTEGER,
             defaultValue: 0
         },
-        totalSold: {
+        priceSold: {
             allowNull: false,
             type: DataTypes.INTEGER,
             defaultValue: 0
@@ -100,7 +100,7 @@ Product.init(
     }
 );
 
-Invoice.hasOne(Product, { foreignKey: 'invoiceId' });
+Invoice.hasMany(Product, { foreignKey: 'invoiceId' });
 Product.belongsTo(Invoice);
 
 export default {

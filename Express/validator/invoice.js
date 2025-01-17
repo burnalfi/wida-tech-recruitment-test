@@ -23,23 +23,7 @@ const createInvoiceValidation = [
 ];
 
 
-const updateInvoiceValidation = [
-    checkSchema(
-        {
-            invoiceNo: { notEmpty: false, isInt: true, isLength: { min: 1 } },
-            date: { notEmpty: false, isISO8601: true },
-            customerName: { notEmpty: false, isString: true, isLength: { min: 2 } },
-            salespersonName: { notEmpty: false, isString: true, isLength: { min: 2 } },
-            paymentType: { notEmpty: false, isIn: { options: [['CASH', 'CREDIT']] } },
-            notes: { isString: true }
-        }
-    ),
-    errorHandler
-];
-
-
 export default {
     createInvoiceValidation,
-    updateInvoiceValidation,
     errorHandler
 }
