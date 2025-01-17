@@ -1,13 +1,20 @@
 import { Sequelize } from "sequelize";
 import { Model, DataTypes } from 'sequelize';
 
-const sequelize = new Sequelize('postgres://postgres:root@127.0.0.1:5432/widatech');
+const sequelize = new Sequelize('postgres://postgres:root@127.0.0.1:5432/widatech', {});
 
 class Invoice extends Model {};
 class Product extends Model {};
 
 Invoice.init(
     {
+        id: {
+            type: DataTypes.INTEGER,
+            primaryKey: true,
+            allowNull: false,
+            autoIncrement: true,
+            unique: true,
+        },
         invoiceNo: {
             allowNull: false,
             type: DataTypes.INTEGER,
@@ -17,7 +24,7 @@ Invoice.init(
         },
         date: {
             allowNull: false,
-            type: DataTypes.DATE
+            type: DataTypes.STRING
         },
         customerName: {
             allowNull: false,
@@ -44,7 +51,8 @@ Invoice.init(
     },
     {
         sequelize,
-        modelName: 'Invoice'
+        modelName: 'Invoice',
+        timestamps: false
     }
 )
 

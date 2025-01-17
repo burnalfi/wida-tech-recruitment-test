@@ -1,5 +1,5 @@
-import product from "./product.js";
+import invoice from "./invoice.js";
 
 export default {
-    product
+    invoice
 }
