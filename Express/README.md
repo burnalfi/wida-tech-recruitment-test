@@ -8,3 +8,10 @@
     - To run the application with developer mode type in `npm run start:dev`.
     - The tables of the database should automatically be generated into your database.
 4. Application should be ready to be tested with Postman.
+
+## Postman Documentation
+My apologies. It seems that I am unable to convert the postman collection into markdown. This is caused by this following error.
+
+![alt text](image.png)
+
+But I did manage to publish my documentation and put it in this [link](https://documenter.getpostman.com/view/7802464/2sAYQakqcW).

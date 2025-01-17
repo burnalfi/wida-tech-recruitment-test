@@ -1,8 +1,6 @@
 import { Router } from "express";
-import { validationResult } from 'express-validator';
 import controller from '../controller/index.js';
 import validator from "../validator/index.js";
-
 
 const { invoice: { InvoiceController } } = controller;
 const { invoice: { createInvoiceValidation } } = validator;
@@ -25,11 +23,6 @@ invoiceRouter.patch('', async (req, res) => {
 invoiceRouter.delete('', async (req, res) => {
     return res.json(await invoiceController.deleteInvoice(req.query));
 });
-
-invoiceRouter.post('/product', async (req, res) => {
-    return res.json(await invoiceController.createProduct(req.body));
-});
-
 
 export default {
     invoiceRouter

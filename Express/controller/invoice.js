@@ -19,7 +19,7 @@ class InvoiceController {
         
         if (page && size) {
             options.limit = size;
-            options.size = (page - 1) * size
+            options.offset = (page - 1) * size
         }
 
         return Invoice.findAll(options)
@@ -69,9 +69,6 @@ class InvoiceController {
         .catch((err) => {
             return { message: 'An error has occurred', err: err.message }
         });
-    }
-    async createProduct(payload) {
-        return Product.create(payload);
     }
 }
 

@@ -3,7 +3,7 @@ import database from './model/database.js';
 import routes from './routes/index.js';
 
 const app = express();
-const { invoice: { invoiceRouter } } = routes;
+const { invoice: { invoiceRouter }, product: { productRouter } } = routes;
 
 function main() {
     database.sequelize.sync({ alter: true })
@@ -19,6 +19,7 @@ function main() {
     });
 
     app.use('/invoice', invoiceRouter);
+    app.use('/product', productRouter);
 
     app.listen(3000, () => {
         console.log(`Example app listening on port 3000`)

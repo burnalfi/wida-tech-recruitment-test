@@ -65,7 +65,7 @@ Product.init(
             autoIncrement: true,
             unique: true,
         },
-        invoiceId: {
+        invoiceNo: {
             allowNull: false,
             type: DataTypes.INTEGER
         },
@@ -100,7 +100,7 @@ Product.init(
     }
 );
 
-Invoice.hasMany(Product, { foreignKey: 'invoiceId' });
+Invoice.hasMany(Product, { foreignKey: 'invoiceNo' });
 Product.belongsTo(Invoice);
 
 export default {
